@@ -3,6 +3,8 @@ var app = express()
 var server = require('http').createServer(app)
 var io = require('socket.io').listen(server)
 
+var socket = io.connect('fierce-fortress-2845');
+
 app.set('port',  (process.env.PORT || 3000));
 
 server.listen(process.env.PORT || 3000);
