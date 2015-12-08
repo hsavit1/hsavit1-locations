@@ -7,6 +7,9 @@ server.listen(process.env.PORT || 3000);
 
 app.use(express.static(__dirname + "/"))
 
+app.get(express.static(__dirname + "/"), somefunction(request, response) {response.send(“Hello”)}
+
+
 io.sockets.on('connection', function(socket) { 
 
 })
