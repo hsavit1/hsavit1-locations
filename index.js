@@ -3,7 +3,7 @@ var app = express()
 var server = require('http').createServer(app)
 var io = require('socket.io').listen(server)
 
-var socket = io.connect('https://www.heroku.com/fierce-fortress-2845')
+var socket = io.connection('https://www.heroku.com/fierce-fortress-2845')
 
 app.set('port',  (process.env.PORT || 3000));
 
