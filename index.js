@@ -7,7 +7,7 @@ server.listen(process.env.PORT || 3000);
 
 app.use(express.static(__dirname + "/"))
 
-app.get('/', function (req, res) {
+app.get(express.static(__dirname + "/"), function (req, res) {
   res.send('Hello World!');
 });
 
