@@ -9,14 +9,16 @@
     
     <script> 
       var io = require('socket.io');
-      var socket = io.connection('https://www.heroku.com/fierce-fortress-2845');
-      socket.on('connection', function(response)
-      {
+      var socket = io.connect('https://www.heroku.com/fierce-fortress-2845');
+      socket.on('connection', function(response){
+        print("a conneciton was made")
         console.log(response);
-        socket.emit('Stuff', {different: 'response'});
+        socket.emit('Stuff', {
+          different: 'response'
+        });
       });
     </script>
-    
+
   </body>
 
 </html>

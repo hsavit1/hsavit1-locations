@@ -13,11 +13,22 @@ app.get('/',  function (req, res) {
 
 io.on('connection', function(socket) { 
 
-   socket.emit('connection', {hello: 'world'});
+   socket.emit('connection', {
+	   hello: 'world'
+   });
+   
    socket.emit('stuff', function(other)
    {
        console.log(other);
    });
+})
+
+io.on("removeLocation", function(socket) {
+
+})
+
+io.on("locationUpdate", function(socket) {
+	
 })
 
 server.listen(process.env.PORT || 3000);
