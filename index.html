@@ -8,7 +8,7 @@
   
   <script> 
   var io = require('socket.io');
-  var socket = io.connection('https://www.heroku.com/fierce-fortress-2845');
+  var socket = io.connect('https://www.heroku.com/fierce-fortress-2845');
   socket.on('Connection', function(response)
   {
     console.log(response);
