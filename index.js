@@ -23,8 +23,6 @@ app.use(express.static(".//node_modules/socket.io-client/"));
 //   res.send('Hello World!');
 // });
 
-io.set('log level', 2);
-
 io.on('connection', function(socket) { 
     console.log("Someone connected %s", socket.id);
 
