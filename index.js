@@ -7,12 +7,10 @@ var io = require('socket.io')(server);
 //   path: '/socket.io'
 // });
 
-// var io = require('socket.io')(server);
-
-
 app.set('port',  (process.env.PORT || 3000));
 
-app.use(express.static(__dirname + "/node_modules/socket.io-client/"))
+app.use("./node_modules/socket.io-client/")
+// app.use(express.static(__dirname + "/node_modules/socket.io-client/"))
 app.use(express.static(__dirname + "/public"));
 
 
@@ -45,11 +43,9 @@ io.on('connection', function(socket) {
 })
 
 // io.on("removeLocation", function(socket) {
-
 // })
 
 // io.on("locationUpdate", function(socket) {
-	
 // })
 
 server.listen(process.env.PORT || 3000);
