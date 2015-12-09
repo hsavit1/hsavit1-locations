@@ -5,7 +5,9 @@
 <body>
   <p>Hello, World!</p>
   <script type ="text/javascript", src = "https://www.heroku.com/fierce-fortress-2845/socket.io/socket.io.js"></script>
+  
   <script> 
+  var io = require('socket.io');
   var socket = io.connection('https://www.heroku.com/fierce-fortress-2845');
   socket.on('Connection', function(response)
   {
