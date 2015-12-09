@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!-- <!DOCTYPE HTML>
 
 <html>
 
@@ -23,4 +23,25 @@
 
   </body>
 
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NodeJs and Socket.io starter</title>
+    <script src="socket.io.js" type="text/javascript"></script>
+</head>
+<body>
+    <h1>NodeJs with Socket.io on Heroku</h1>
+    <div id="socket"></div>
+    <script type="text/javascript">
+        var socket = io("");
+        socket.emit("client", "Send signal to server on " + new Date().toTimeString());
+        socket.on("client", function(data) {
+            document.getElementById("socket").innerHTML = data;
+        });
+    </script>
+</body>
 </html>
