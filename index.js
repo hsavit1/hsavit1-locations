@@ -12,11 +12,8 @@ var io = require('socket.io')(server);
 
 app.set('port',  (process.env.PORT || 3000));
 
-// app.use(express.static(__dirname + "/"))
-
-// serve index response from public folder
-app.use(express.static("./public"));
-app.use(express.static("./node_modules/socket.io-client/"));
+app.use(express.static(__dirname + "/node_modules/socket.io-client/"))
+app.use(express.static(__dirname + "/public"));
 
 
 app.get('/',  function (req, res) {
