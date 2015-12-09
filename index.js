@@ -17,11 +17,13 @@ app.get('/',  function (req, res) {
   res.send('Hello World!');
 });
 
-// app.get('/', function (req, res) {
-// 	res.sendFile(__dirname + '/index.html');
-// });
+io.set('log level', 2);
 
 io.on('connection', function(socket) { 
+  // socket.on('join', function (data){
+  //   socket.room = data;
+  // })
+
 
    // socket.emit('connection', {
 	  //  hello: 'world'
