@@ -7,11 +7,13 @@ app.set('port',  (process.env.PORT || 3000));
 
 // app.use("./node_modules/socket.io-client/")
 // app.use(express.static(__dirname + "/node_modules/socket.io-client/"))
-app.use(express.static(__dirname + "/public"));
-app.use(express.static(__dirname = "/"))
+
+// app.use(express.static(__dirname + "/public"));
+// app.use(express.static(__dirname = "/"))
 
 app.get('/',  function (req, res) {
   res.send('Hello World!');
+  res.sendFile(__dirname + '/index.html');
 });
 
 io.on('connection', function(socket) { 
