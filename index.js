@@ -5,7 +5,7 @@ var io = require('socket.io')(server);
 
 app.set('port',  (process.env.PORT || 3000));
 
-app.use("/node_modules/socket.io-client/")
+app.use("./node_modules/socket.io-client/")
 // app.use(express.static(__dirname + "/node_modules/socket.io-client/"))
 app.use(express.static(__dirname + "/public"));
 
