@@ -18,14 +18,14 @@ app.get('/',  function (req, res) {
 
 io.on('connection', function(socket) { 
 
-   socket.emit('connection', {
-	   hello: 'world'
-   });
+   // socket.emit('connection', {
+	  //  hello: 'world'
+   // });
    
-   socket.emit('stuff', function(other)
-   {
-       console.log(other);
-   });
+   // socket.emit('stuff', function(other)
+   // {
+   //     console.log(other);
+   // });
 })
 
 io.on("removeLocation", function(socket) {
