@@ -1,10 +1,11 @@
-var express = require('express')
-var app = express()
+var express = require('express');
+var app = express();
 var server = require('http').createServer(app);
-var io = require('socket.io')(server, {
-  serveClient: (config.env === 'production') ? false : true,
-  path: '/socket.io'
-});
+var io = require('socket.io')(server);
+// var io = require('socket.io')(server, {
+//   serveClient: (config.env === 'production') ? false : true,
+//   path: '/socket.io'
+// });
 
 // var io = require('socket.io')(server);
 
