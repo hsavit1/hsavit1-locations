@@ -3,8 +3,6 @@ var app = express()
 var server = require('http').createServer(app)
 var io = require('socket.io').listen(server)
 
-
-
 app.set('port',  (process.env.PORT || 3000));
 
 server.listen(process.env.PORT || 3000);
@@ -16,8 +14,8 @@ app.get('/',  function (req, res) {
 });
 
 io.on('connection', function(socket) { 
-   socket.emit('Connection', {hello: 'world'});
-   socket.emit('Stuff', function(other)
+   socket.emit('connection', {hello: 'world'});
+   socket.emit('stuff', function(other)
    {
        console.log(other);
    });
