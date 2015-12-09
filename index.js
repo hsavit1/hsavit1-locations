@@ -13,7 +13,7 @@ app.set('port',  (process.env.PORT || 3000));
 
 app.get('/',  function (req, res) {
   res.send('Hello World!');
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(express.static(__dirname + '/index.html'));
 });
 
 io.on('connection', function(socket) { 
