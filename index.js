@@ -41,6 +41,12 @@ io.on('connection', function(socket) {
    // {
    //     console.log(other);
    // });
+
+    // respond on client message
+    socket.on("client", function(data) {
+
+        socket.emit("client", "Response from server on " + new Date().toTimeString() + " to " + data);
+    });
 })
 
 // io.on("removeLocation", function(socket) {
