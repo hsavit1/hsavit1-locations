@@ -9,6 +9,7 @@ var io = require('socket.io')(server);
 
 // var io = require('socket.io')(server);
 
+
 app.set('port',  (process.env.PORT || 3000));
 
 app.use(express.static(__dirname + "/"))
@@ -20,6 +21,8 @@ app.get('/',  function (req, res) {
 io.set('log level', 2);
 
 io.on('connection', function(socket) { 
+    console.log("Someone connected %s", socket.id);
+
   // socket.on('join', function (data){
   //   socket.room = data;
   // })
@@ -35,12 +38,13 @@ io.on('connection', function(socket) {
    // });
 })
 
-io.on("removeLocation", function(socket) {
+// io.on("removeLocation", function(socket) {
 
-})
+// })
 
-io.on("locationUpdate", function(socket) {
+// io.on("locationUpdate", function(socket) {
 	
-})
+// })
 
 server.listen(process.env.PORT || 3000);
+
